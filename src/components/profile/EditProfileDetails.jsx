@@ -1,11 +1,8 @@
 import React, { useReducer } from 'react';
 import { connect } from 'react-redux';
-import { isLoaded } from 'react-redux-firebase';
 import * as profileActions from './../../store/actions/profile.actions';
 
 function ProfileDetails(props) {
-	const { profile } = props;
-
 	const [state, setState] = useReducer((state, newState) => ({ ...state, ...newState }), {
 		newNickname: null,
 		newAge: null,
@@ -21,12 +18,6 @@ function ProfileDetails(props) {
 		props.editProfile(state);
 		props.history.push('/app/profile');
 	};
-
-	if (!isLoaded(profile)) return null;
-
-	if (state.newNickname === null && isLoaded(profile)) {
-		setState({ newNickname: profile.nickname, newAge: profile.age });
-	}
 
 	return (
 		<div className='container'>
@@ -52,14 +43,8 @@ function ProfileDetails(props) {
 	);
 }
 
-const mapStateToProps = (state) => {
-	return {
-		profile: state.firebase.profile,
-	};
-};
-
 const mapDispatchToProps = {
 	editProfile: profileActions.editProfile,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileDetails);
+export default connect(null, mapDispatchToProps)(ProfileDetails);

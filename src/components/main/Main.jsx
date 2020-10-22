@@ -19,7 +19,7 @@ function Main() {
 
 			<div id='mainContent' className='container'>
 				<div className='row'>
-					<div className='col s12 m7'>
+					<div className='col s12 m8'>
 						<Switch>
 							<PrivateRoute path='/app' exact component={MyLessonsList} />
 							<PrivateRoute path='/app/profile/edit' component={EditProfileDetails} auth={auth} />
