@@ -1,0 +1,72 @@
+.startPage {
+	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url(/img/kite-bg.jpg) no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	background-position: center;
+}
+
+.startWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 67vh;
+	font-size: 6vw;
+}
+
+.loginModal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid #ccc;
+	background: #fff;
+	overflow: auto;
+	border-radius: 4px;
+	outline: none;
+	padding: 20px;
+}
+
+.loginModalOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+button.login {
+	background-color: transparent;
+	top: 3rem;
+	border: 0.3rem solid white;
+	height: 6vw;
+	width: 18vw;
+	border-radius: 50rem !important;
+	line-height: 5vw;
+	font-size: 2.4vw;
+}
+
+button.login:hover {
+	background-color: rgba(255, 255, 255, 1);
+	color: black;
+}
+
+button.login:focus {
+	background-color: rgba(255, 255, 255, 1);
+	color: black;
+}
+
+@media only screen and (max-width: 775px) {
+	button.login {
+		background-color: transparent;
+		top: 7rem;
+		border: 0.3rem solid white;
+		height: 60px;
+		width: 200px;
+		border-radius: 50rem !important;
+		line-height: 5vw;
+		font-size: 2rem;
+	}
+}

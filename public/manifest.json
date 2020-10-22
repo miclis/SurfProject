@@ -1,25 +1,53 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+	"short_name": "SurfProject",
+	"name": "SurfProject Schedule Manager",
+	"icons": [
+		{
+			"src": "favicon.ico",
+			"sizes": "64x64 32x32 24x24 16x16",
+			"type": "image/x-icon"
+		},
+		{
+			"src": "logo_16",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "logo_24",
+			"sizes": "24x24",
+			"type": "image/png"
+		},
+		{
+			"src": "logo_32",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "logo_64",
+			"sizes": "64x64",
+			"type": "image/png"
+		},
+		{
+			"src": "logo_128.ico",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "logo_256.ico",
+			"type": "image/png",
+			"sizes": "256x256",
+			"purpose": "maskable"
+		},
+		{
+			"src": "logo_512.ico",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "maskable"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#57d4c8",
+	"background_color": "#ffffff",
+	"orientation": "portrait-primary"
 }
