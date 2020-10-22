@@ -31,3 +31,15 @@ nav .profileLink:focus {
 nav .profileLink.active .profilePhoto {
 	border: 0.3em solid white;
 }
+
+@media screen and (max-width: 599px) {
+	nav .profilePhoto {
+		height: 3.5em;
+	}
+
+	.sidenav li > a {
+		height: 70px !important;
+		line-height: 70px !important;
+		font-size: 25px !important;
+	}
+}

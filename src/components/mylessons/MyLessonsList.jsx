@@ -10,7 +10,7 @@ function MyLessonsList() {
 	const auth = useSelector((state) => state.firebase.auth);
 	const myLessons = useSelector((state) => state.firestore.ordered.myLessons);
 	useFirestoreConnect([
-		{ collection: 'lessons', storeAs: 'myLessons', where: ['student', '==', auth.uid], orderBy: ['date', 'desc'] },
+		{ collection: 'lessons', storeAs: 'myLessons', where: ['student', '==', auth.uid], orderBy: ['date', 'asc'] },
 	]);
 
 	if (!isLoaded(myLessons)) {

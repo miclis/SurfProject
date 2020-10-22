@@ -44,6 +44,7 @@
 		]
 	},
 	"devDependencies": {
-		"redux-immutable-state-invariant": "^2.1.0"
+		"redux-immutable-state-invariant": "^2.1.0",
+		"sw-precache": "^5.2.1"
 	}
 }
