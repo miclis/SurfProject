@@ -3,7 +3,6 @@ import { useFirebase } from 'react-redux-firebase';
 import FirebaseAuth from 'react-firebaseui/FirebaseAuth';
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
-import './LoginModal.css';
 import * as authActions from '../../store/actions/auth.actions';
 
 function LoginModal(props) {
@@ -17,8 +16,14 @@ function LoginModal(props) {
 		signInSuccessUrl: '/app',
 		// Auth Providers
 		signInOptions: [
-			firebase.auth.EmailAuthProvider.PROVIDER_ID,
-			firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+			{
+				provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+				customParameters: {
+					// Forces account selection even when one account
+					// is available.
+					prompt: 'select_account',
+				},
+			},
 			firebase.auth.FacebookAuthProvider.PROVIDER_ID,
 		],
 		privacyPolicyUrl: '/privacy',

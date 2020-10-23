@@ -2,7 +2,7 @@ import React from 'react';
 
 function Spinner() {
     return (
-        <div className='preloader-wrapper big active'>
+        <div className='preloader-wrapper big active spinner'>
 				<div className='spinner-layer spinner-blue-only'>
 					<div className='circle-clipper left'>
 						<div className='circle'></div>

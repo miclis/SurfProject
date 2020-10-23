@@ -9,6 +9,7 @@ import PrivateRoute from '../auth/PrivateRoute';
 import ProfileDetails from './../profile/ProfileDetails';
 import { auth } from 'firebase';
 import EditProfileDetails from '../profile/EditProfileDetails';
+import AddLesson from './../trainer/AddLesson';
 
 Main.propTypes = {};
 
@@ -17,17 +18,15 @@ function Main() {
 		<>
 			<Header />
 
-			<div id='mainContent' className='container'>
-				<div className='row'>
-					<div className='col s12 m8'>
-						<Switch>
-							<PrivateRoute path='/app' exact component={MyLessonsList} />
-							<PrivateRoute path='/app/profile/edit' component={EditProfileDetails} auth={auth} />
-
-							<PrivateRoute path='/app/profile' exact component={ProfileDetails} auth={auth} />
-							<Redirect to='/' />
-						</Switch>
-					</div>
+			<div className='section'>
+				<div id='mainContent' className='container'>
+					<Switch>
+						<PrivateRoute path='/app' exact component={MyLessonsList} />
+						<PrivateRoute path='/app/add' exact component={AddLesson} auth={auth} />
+						<PrivateRoute path='/app/profile/edit' component={EditProfileDetails} auth={auth} />
+						<PrivateRoute path='/app/profile' exact component={ProfileDetails} auth={auth} />
+						<Redirect to='/' />
+					</Switch>
 				</div>
 			</div>
 		</>

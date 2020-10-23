@@ -18,7 +18,7 @@ function LessonSummary(props) {
 	return (
 		<div className='card z-depth-0 lesson-summary cyan lighten-5'>
 			<div className='card-content grey-text text-darken-3'>
-				<span className='card-title'>{lesson.trainerNickname}</span>
+				<span className='card-title'>{lesson.studentName}</span>
 				<p className='grey-text text-darken-1'>{moment(new Date(lesson.date.seconds * 1000)).calendar()}</p>
 				<button
 					onClick={handleDelete}

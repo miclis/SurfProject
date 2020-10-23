@@ -60,13 +60,13 @@ button.login:focus {
 
 @media only screen and (max-width: 775px) {
 	button.login {
-		background-color: transparent;
 		top: 7rem;
-		border: 0.3rem solid white;
 		height: 60px;
 		width: 200px;
-		border-radius: 50rem !important;
-		line-height: 5vw;
 		font-size: 2rem;
+	}
+
+	.loginModal {
+		width: 90%;
 	}
 }

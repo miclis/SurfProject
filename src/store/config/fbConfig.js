@@ -3,6 +3,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/functions';
+import 'firebase/messaging';
 import { createFirestoreInstance } from 'redux-firestore';
 
 // Initilize Firebase
@@ -25,6 +26,7 @@ firebase
 		console.log('Storage persistence is unavailable on the device...');
 	});
 firebase.functions();
+firebase.messaging();
 
 export default firebase;
 

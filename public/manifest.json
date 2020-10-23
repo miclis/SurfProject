@@ -52,7 +52,7 @@
 	],
 	"start_url": ".",
 	"display": "standalone",
-	"theme_color": "#57d4c8",
-	"background_color": "#ffffff",
+	"theme_color": "#fff",
+	"background_color": "#57d4c8",
 	"orientation": "portrait-primary"
 }

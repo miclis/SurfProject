@@ -21,3 +21,9 @@ body {
 	margin-right: 1px;
 	position: relative;
 }
+
+.spinner {
+	position: absolute !important;
+	top: 50%;
+	left: 43%;
+}

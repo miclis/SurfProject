@@ -1,3 +1,14 @@
 .card .btn-floating {
 	top: -58px;
 }
+
+.card .btn-floating {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
+}
+
+.card:hover .btn-floating {
+	visibility: visible;
+	opacity: 1;
+}
