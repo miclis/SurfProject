@@ -47,7 +47,6 @@
 	"devDependencies": {
 		"cra-bundle-analyzer": "^0.1.0",
 		"redux-immutable-state-invariant": "^2.1.0",
-		"sw-precache": "^5.2.1",
 		"webpack-bundle-analyzer": "^3.9.0"
 	}
 }
