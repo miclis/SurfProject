@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { isLoaded, isEmpty } from 'react-redux-firebase';
 import { Redirect } from 'react-router-dom';
 import * as lessonActions from '../../store/actions/lesson.actions';
-import M from 'materialize-css/dist/js/materialize';
+import M from 'materialize-css/dist/js/materialize.min';
 
 const AddLesson = (props) => {
 	const [state, setState] = useReducer((state, newState) => ({ ...state, ...newState }), {

@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { isEmpty } from 'react-redux-firebase';
-import AdminPanel from './../auth/AdminPanel';
+import Spinner from '../common/Spinner';
+
+const AdminPanel = React.lazy(() => import('./../auth/AdminPanel'));
 
 function ProfileDetails(props) {
 	const profile = useSelector((state) => state.firebase.profile);
@@ -37,7 +39,9 @@ function ProfileDetails(props) {
 					</div>
 				</div>
 				<div className='col s12 m4'>
-					<AdminPanel />
+					<Suspense fallback={<Spinner />}>
+						<AdminPanel />
+					</Suspense>
 				</div>
 			</div>
 		</div>

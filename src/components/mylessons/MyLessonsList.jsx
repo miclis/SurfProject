@@ -5,8 +5,11 @@ import Spinner from '../common/Spinner';
 import LessonSummary from './LessonSummary';
 import LessonSummaryTrainer from './LessonSummaryTrainer';
 import * as lessonActions from '../../store/actions/lesson.actions';
+import { PropTypes } from 'prop-types';
 
-MyLessonsList.propTypes = {};
+MyLessonsList.propTypes = {
+	deleteLesson: PropTypes.func.isRequired,
+};
 
 function MyLessonsList(props) {
 	const auth = useSelector((state) => state.firebase.auth);

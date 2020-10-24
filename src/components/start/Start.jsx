@@ -21,28 +21,32 @@ function Start(props) {
 
 	if (auth.uid) return <Redirect to='/app' />;
 	return (
-		<div className='startPage'>
-			<Navbar toggleModal={toggleModal} />
-			<Modal
-				isOpen={isOpen}
-				onRequestClose={toggleModal}
-				contentLabel='Login Modal'
-				className='loginModal'
-				overlayClassName='loginModalOverlay'
-			>
-				<LoginModal toggleModal={toggleModal} />
-			</Modal>
-			<div className='startWrapper white-text'>
-				<div>Eat Surf Sleep Repeat</div>
-				<button
-					onClick={toggleModal}
-					style={{ zIndex: 0 }}
-					className='btn btn-large waves-effect waves-light login'
-				>
-					Login
-				</button>
+		<>
+			<div className='startPage'>
+				<Navbar toggleModal={toggleModal} />
+				<main>
+					<Modal
+						isOpen={isOpen}
+						onRequestClose={toggleModal}
+						contentLabel='Login Modal'
+						className='loginModal'
+						overlayClassName='loginModalOverlay'
+					>
+						<LoginModal toggleModal={toggleModal} />
+					</Modal>
+					<div className='startWrapper white-text'>
+						<div>Eat Surf Sleep Repeat</div>
+						<button
+							onClick={toggleModal}
+							style={{ zIndex: 0 }}
+							className='btn btn-large waves-effect waves-light login'
+						>
+							Login
+						</button>
+					</div>
+				</main>
 			</div>
-		</div>
+		</>
 	);
 }
 

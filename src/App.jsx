@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import PrivateRoute from './components/auth/PrivateRoute';
-import Start from './components/start/Start';
-import Main from './components/main/Main';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Start from './components/start/Start';
+import Main from './components/main/Main';
 
 function App() {
 	return (

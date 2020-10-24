@@ -9,7 +9,6 @@ import { rrfProps } from './store/config/fbConfig';
 
 import './index.css';
 import 'materialize-css/dist/css/materialize.min.css';
-import 'materialize-css/dist/js/materialize.min';
 import AuthIsLoaded from './components/auth/AuthIsLoaded';
 
 const store = selectStore();

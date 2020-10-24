@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 
 function Spinner() {
     return (
@@ -19,3 +19,11 @@ function Spinner() {
 }
 
 export default Spinner;
+
+export function WaitingComponent(Component) {
+	return (props) => (
+		<Suspense fallback={<Spinner />}>
+			<Component {...props} />
+		</Suspense>
+	);
+}

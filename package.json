@@ -24,7 +24,7 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
-		"build": "react-scripts build",
+		"build": "react-scripts build && cra-bundle-analyzer",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"deploy": "build && firebase deploy --only hosting"
@@ -34,9 +34,9 @@
 	},
 	"browserslist": {
 		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
+			"last 2 chrome version",
+			"last 2 firefox version",
+			"last 2 safari version"
 		],
 		"development": [
 			"last 1 chrome version",
@@ -45,7 +45,9 @@
 		]
 	},
 	"devDependencies": {
+		"cra-bundle-analyzer": "^0.1.0",
 		"redux-immutable-state-invariant": "^2.1.0",
-		"sw-precache": "^5.2.1"
+		"sw-precache": "^5.2.1",
+		"webpack-bundle-analyzer": "^3.9.0"
 	}
 }

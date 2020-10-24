@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { connect, useSelector } from 'react-redux';
@@ -63,11 +64,11 @@ function Header(props) {
 	// Trainer
 	if (token.claims.trainer)
 		return (
-			<>
+			<header>
 				<nav className='header nav-wrapper cyan darken-2'>
 					<div className='container'>
 						<Link to='/' className='brand-logo left'>
-							<img src={logo} alt='logo' className='logo' />
+							<img width='32px' height='32px' src={logo} alt='logo' className='logo' />
 							SurfProject
 						</Link>
 						<ul className='right'>
@@ -104,6 +105,11 @@ function Header(props) {
 				</nav>
 				<ul className='sidenav' id='slide-out'>
 					<li>
+						<NavLink to='/app/add' exact activeClassName='active'>
+							Add Lesson
+						</NavLink>
+					</li>
+					<li>
 						<NavLink to='/app' exact activeClassName='active'>
 							My Lessons
 						</NavLink>
@@ -114,7 +120,7 @@ function Header(props) {
 						</a>
 					</li>
 				</ul>
-			</>
+			</header>
 		);
 
 	// Student
@@ -128,7 +134,7 @@ function Header(props) {
 					</Link>
 					<ul className='right'>
 						<li>
-							<a href='#!' data-target='slide-out' className='sidenav-trigger'>
+							<a href='#' data-target='slide-out' className='sidenav-trigger'>
 								<i className='material-icons'>menu</i>
 							</a>
 						</li>

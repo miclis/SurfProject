@@ -1,6 +1,5 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import 'firebase/auth';
 import 'firebase/database';
 import 'firebase/functions';
 import 'firebase/messaging';
@@ -22,6 +21,7 @@ firebase.initializeApp(firebaseConfig);
 firebase
 	.firestore()
 	.enablePersistence()
+	.then('Your lessons will be visible even offline :)')
 	.catch((err) => {
 		console.log('Storage persistence is unavailable on the device...');
 	});

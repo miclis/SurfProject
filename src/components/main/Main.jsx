@@ -6,29 +6,39 @@ import Header from './Header';
 import MyLessonsList from './../mylessons/MyLessonsList';
 import { Redirect, Switch } from 'react-router-dom';
 import PrivateRoute from '../auth/PrivateRoute';
-import ProfileDetails from './../profile/ProfileDetails';
 import { auth } from 'firebase';
-import EditProfileDetails from '../profile/EditProfileDetails';
-import AddLesson from './../trainer/AddLesson';
+import { WaitingComponent } from '../common/Spinner';
 
-Main.propTypes = {};
+const AddLesson = React.lazy(() => import('../trainer/AddLesson'));
+const EditProfileDetails = React.lazy(() => import('../profile/EditProfileDetails'));
+const ProfileDetails = React.lazy(() => import('../profile/ProfileDetails'));
 
 function Main() {
 	return (
 		<>
 			<Header />
-
-			<div className='section'>
-				<div id='mainContent' className='container'>
-					<Switch>
-						<PrivateRoute path='/app' exact component={MyLessonsList} />
-						<PrivateRoute path='/app/add' exact component={AddLesson} auth={auth} />
-						<PrivateRoute path='/app/profile/edit' component={EditProfileDetails} auth={auth} />
-						<PrivateRoute path='/app/profile' exact component={ProfileDetails} auth={auth} />
-						<Redirect to='/' />
-					</Switch>
+			<main>
+				<div className='section'>
+					<div id='mainContent' className='container'>
+						<Switch>
+							<PrivateRoute path='/app' exact component={MyLessonsList} />
+							<PrivateRoute path='/app/add' exact component={WaitingComponent(AddLesson)} auth={auth} />
+							<PrivateRoute
+								path='/app/profile/edit'
+								component={WaitingComponent(EditProfileDetails)}
+								auth={auth}
+							/>
+							<PrivateRoute
+								path='/app/profile'
+								exact
+								component={WaitingComponent(ProfileDetails)}
+								auth={auth}
+							/>
+							<Redirect to='/' />
+						</Switch>
+					</div>
 				</div>
-			</div>
+			</main>
 		</>
 	);
 }
