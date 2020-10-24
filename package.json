@@ -27,7 +27,7 @@
 		"build": "react-scripts build && cra-bundle-analyzer",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"deploy": "build && firebase deploy --only hosting"
+		"deploy": "npm run build && firebase deploy --only hosting"
 	},
 	"eslintConfig": {
 		"extends": "react-app"

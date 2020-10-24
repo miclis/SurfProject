@@ -13,6 +13,8 @@
 
 # Firebase
 /.firebase
+*.cache
+.firebase
 
 # misc
 .DS_Store
