@@ -30,15 +30,7 @@ function MyLessonsList(props) {
 		},
 	]);
 
-	const token = useSelector((state) => state.firebase.profile.token);
-
-	if (
-		!isLoaded(myLessonsStudent) ||
-		!isLoaded(myLessonsTrainer) ||
-		!isLoaded(token) ||
-		isEmpty(token) ||
-		!token.claims
-	) {
+	if (!isLoaded(myLessonsStudent) && !isLoaded(myLessonsTrainer)) {
 		return <Spinner />;
 	}
 
@@ -49,7 +41,7 @@ function MyLessonsList(props) {
 	return (
 		<div className='myLessons'>
 			<h2 className='grey-text text-darken-3'>Near Schedule</h2>
-			{token.claims.trainer
+			{myLessonsStudent == null || myLessonsStudent.length === 0
 				? myLessonsTrainer.map((lesson) => (
 						<LessonSummaryTrainer key={lesson.id} lesson={lesson} delete={props.deleteLesson} />
 				  ))
