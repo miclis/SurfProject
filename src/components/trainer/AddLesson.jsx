@@ -1,7 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { useSelector } from 'react-redux';
-import { isLoaded, isEmpty } from 'react-redux-firebase';
 import { Redirect } from 'react-router-dom';
 import * as lessonActions from '../../store/actions/lesson.actions';
 import M from 'materialize-css/dist/js/materialize.min';
@@ -13,8 +11,6 @@ const AddLesson = (props) => {
 		date: '',
 		time: '',
 	});
-
-	const token = useSelector((state) => state.firebase.profile.token);
 
 	useEffect(() => {
 		const datePicker = document.querySelector('#date');
@@ -32,7 +28,9 @@ const AddLesson = (props) => {
 		});
 	}, []);
 
-	if (!isLoaded(token) || isEmpty(token) || !token.claims.trainer) return <Redirect to='/app' />;
+	const trainer = localStorage.getItem('trainerAccess');
+
+	if (!trainer) return <Redirect to='/app' />;
 
 	const handleChange = (event) => {
 		const { id, value } = event.target;
