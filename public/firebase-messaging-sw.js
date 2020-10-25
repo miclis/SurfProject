@@ -1,5 +1,5 @@
-importScripts('https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/4.8.1/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/7.24.0/firebase-messaging.js');
 // importScripts('/__/firebase/init.js');
 
 // Initialize the Firebase app in the service worker by passing in the
@@ -9,3 +9,4 @@ firebase.initializeApp({
 });
 
 const initMessaging = firebase.messaging();
+initMessaging.getToken();

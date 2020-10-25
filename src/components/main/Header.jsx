@@ -6,7 +6,7 @@ import * as authActions from '../../store/actions/auth.actions';
 import './Main.css';
 import user from '../../svg/user.svg';
 import logo from '../../svg/logo_white.svg';
-import M from 'materialize-css/dist/js/materialize';
+import M from 'materialize-css/dist/js/materialize.min';
 import { isLoaded, isEmpty } from 'react-redux-firebase';
 
 function Header(props) {

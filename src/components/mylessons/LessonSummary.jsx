@@ -23,8 +23,8 @@ function LessonSummary(props) {
 				<button
 					onClick={handleDelete}
 					className='btn-floating waves-effect waves-light pink darken-2 z-depth-0 right btn-large'
-					title='Set Reminder'
-					aria-label='Set Reminder'
+					title='Cancel Lesson'
+					aria-label='Cancel Lesson'
 				>
 					<i className='material-icons'>close</i>
 				</button>
