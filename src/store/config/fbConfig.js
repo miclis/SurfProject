@@ -26,7 +26,10 @@ firebase
 		console.log('Storage persistence is unavailable on the device...');
 	});
 firebase.functions();
-firebase.messaging();
+firebase
+	.messaging()
+	.getToken({ vapidKey: 'BESFiYS0oFik1kbcnbXwtugX0Bo9L0ZW6d0-mGRF94OIj4gnut0kG3ooR7slQ8c92XG-LmoEtWRcdunS7Y2y8Zc' })
+	.then((token) => console.log(token));
 
 export default firebase;
 
